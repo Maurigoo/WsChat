@@ -6,7 +6,7 @@ import java.net.*;
 
 public class Cliente {
     public static final int PUERTO = 2018;
-    public static final String IP_SERVER = "172.26.101.150"; // Cambiar si es necesario
+    public static final String IP_SERVER = "localhost"; // Cambiar si es necesario
 
 
     /**
@@ -24,6 +24,7 @@ public class Cliente {
     public static void main(String[] args) {
         // Crear la interfaz gráfica
         JFrame ventana = new JFrame("Cliente de Chat Grupal");
+        ventana.setTitle("Cliente de Mensajeria");
         ventana.setSize(450, 500);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -38,9 +39,11 @@ public class Cliente {
         ventana.add(panel, "South");
 
         // Botón de enviar mensaje
-        JButton botonEnviar = new JButton("Enviar Mensaje");
+       /* JButton botonEnviar = new JButton("Enviar Mensaje");
         panel.add(botonEnviar);
+        botonEnviar.addActionListener(e -> {
 
+        });*/
         ventana.setVisible(true);
 
         try (
@@ -94,6 +97,7 @@ public class Cliente {
                     }
 
                     if ("FIN".equalsIgnoreCase(texto)) {
+                        ventana.dispose();
                         break; // Terminar si el cliente escribe "FIN"
                     }
                 }
