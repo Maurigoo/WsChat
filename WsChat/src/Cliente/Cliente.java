@@ -39,10 +39,11 @@ public class Cliente {
         ventana.add(panel, "South");
 
         // Botón de enviar mensaje
-       /* JButton botonEnviar = new JButton("Enviar Mensaje");
+       /*JButton botonEnviar = new JButton("Terminar chat");
         panel.add(botonEnviar);
         botonEnviar.addActionListener(e -> {
-
+            ventana.dispose();
+            System.exit(0);
         });*/
         ventana.setVisible(true);
 
@@ -100,6 +101,7 @@ public class Cliente {
                         ventana.dispose();
                         break; // Terminar si el cliente escribe "FIN"
                     }
+
                 }
             }
         } catch (IOException e) {
